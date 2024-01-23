@@ -1,0 +1,45 @@
+/* .design{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-color: rgb(194, 193, 193);
+
+}
+a{
+  text-decoration: none;;
+}
+
+.container{
+  height: auto;
+  width: 400px; 
+  border: 1px solid black;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+
+
+}
+
+.container > * {
+  margin-bottom: 20px; 
+}
+
+h1{
+  font-size: 30px;
+  font-weight: 600;
+  color: rgb(0, 0, 0);
+  margin-bottom: 20px;
+}
+
+.google-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+} */
