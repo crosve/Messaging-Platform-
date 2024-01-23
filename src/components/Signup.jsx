@@ -1,5 +1,5 @@
-import React, { useState, useContext } from 'react';
-import { FormControl } from '@mui/material';
+import React, { useState, useContext, useEffect } from 'react';
+import { FormControl, MenuList } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
@@ -9,6 +9,8 @@ import { useNavigate } from 'react-router-dom';
 import Alert from '@mui/material/Alert';
 import { db } from '../firebase';
 import {doc,  setDoc } from 'firebase/firestore';
+import Multiselect from './Multiselect';
+import MultiSelectDropdown from './IssuesMultiselect';
 
 
 
@@ -23,9 +25,15 @@ function Signup() {
   const [selectedAgeRange, setSelectedAgeRange] = useState('');
   const [selectedGender, setSelectedGender] = useState('');
   const [country, setCountry] = useState('');
-  const [selectedIntrest, setSelectedIntrests] = useState('');
-  const [selectedIssues, setSelectedIssues] = useState('');
+  const [selectedIntrest, setSelectedIntrests] = useState([]);
+  const [selectedIssues, setSelectedIssues] = useState([]);
   const [error, seterror] = useState('');
+
+  useEffect(() => {
+    console.log(selectedIntrest);
+    console.log(selectedIssues);
+
+  }, [selectedIntrest, selectedIssues]);
 
 
   const ageRanges = [
@@ -191,45 +199,15 @@ function Signup() {
           <MenuItem value="United States">United States</MenuItem>
         </TextField>
 
-        <TextField
-          sx={{ marginBottom: '20px' }}
-          required
-          select
-          label="Interests"
-          value={selectedIntrest}
-          onChange={(e) => setSelectedIntrests(e.target.value)}
-        >
-            {intrests.map((intrests) =>(
-            
-            <MenuItem
-              key={intrests.value}
-              value={intrests.value}
-            >
-              {intrests.label}
-            </MenuItem>
-          ))}
-        </TextField>
 
-        <TextField
-          sx={{ marginBottom: '20px' }}
-          required
-          select
-          label="Issues"
-          value={selectedIssues}
-          onChange={(e) => setSelectedIssues(e.target.value)}
-        >
-          {
-            issuesArea.map((issuesArea) =>(
-              <MenuItem
-                key={issuesArea.value}
-                value={issuesArea.value}
-              >
-                {issuesArea.label}
-              </MenuItem>
-            ))
-          }
 
-        </TextField>
+        {/*This is our drop down multiSelect for our intrests area(max can select 5) */}
+        <Multiselect intrests={intrests} selectedIntrest={selectedIntrest} setSelectedIntrest={setSelectedIntrests} />
+
+
+        {/*This is our drop down multiSelect for our issues area(max can select 5) */}
+        <MultiSelectDropdown issuesArea={issuesArea} selectedIssues={selectedIssues} setSelectedIssues={setSelectedIssues} />
+
 
         <Button type="submit" variant="outlined" sx={{ color: '#000000' }}>
           Submit

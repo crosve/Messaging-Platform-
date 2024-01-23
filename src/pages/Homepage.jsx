@@ -1,9 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useContext } from 'react'
+import { UserAuthContext } from '../context/UserAuthContext'
+import { Navigate } from 'react-router-dom'
 
 function Homepage() {
+  const {user} = useContext(UserAuthContext);
   return (
     <>
+    {user && <Navigate to='/dashboard'/>}:
+
         <div>Homepage</div>
         <div>
             <h1>
