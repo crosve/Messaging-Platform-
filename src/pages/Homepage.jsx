@@ -8,7 +8,7 @@ function Homepage() {
   const {user} = useContext(UserAuthContext);
   return (
     <>
-    {user && <Navigate to='/dashboard'/>}:
+    {/* {user && <Navigate to='/dashboard'/>}: */}
 
         <div>Homepage</div>
         <div>

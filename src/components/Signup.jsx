@@ -1,5 +1,5 @@
-import React, { useState, useContext, useEffect } from 'react';
-import { FormControl, MenuList } from '@mui/material';
+import React, { useState, useContext } from 'react';
+import { FormControl } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
@@ -29,11 +29,6 @@ function Signup() {
   const [selectedIssues, setSelectedIssues] = useState([]);
   const [error, seterror] = useState('');
 
-  useEffect(() => {
-    console.log(selectedIntrest);
-    console.log(selectedIssues);
-
-  }, [selectedIntrest, selectedIssues]);
 
 
   const ageRanges = [
