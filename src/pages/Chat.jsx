@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import { Link } from 'react-router-dom'
 import UserForm from '../components/UserForm';
+import MatchedUsers from '../components/MatchedUsers';
 
 
 function Chat() {
@@ -13,6 +14,7 @@ function Chat() {
       <h1>Welcome to the Chat Room</h1>
       <p>To give you the best experience, please fill out some detail about yourself</p>
       <UserForm/>
+      {/* <MatchedUsers/> */}
       <h1>
         <Link to={'/'}>HomePage</Link>
       </h1>

@@ -62,7 +62,45 @@ export function UserAuthContextFunction9({ children }) {
     //   // ...
     // })
   }
-
+  const matchUsers = (currentUser, allVolunteers) => {
+    const weights = {
+      gender: 1,
+      age: 2,
+      interests: 3,
+      issues: 3,
+    };
+  
+    const userScore = allVolunteers.map((volunteer) => {
+      const score = Object.keys(weights).reduce((total, key) => {
+        if (key === 'interests' || key === 'issues') {
+          const currentUserArray = currentUser[key] || [];
+          const volunteerArray = volunteer[key] || [];
+  
+          const commonCount = currentUserArray.filter((item) =>
+            volunteerArray.some((volunteerItem) => volunteerItem.label === item.label)
+          ).length;
+  
+          return total + weights[key] * (commonCount / Math.max(currentUserArray.length, 1));
+        } else {
+          return total + weights[key] * (currentUser[key] === volunteer[key] ? 1 : 0);
+        }
+      }, 0);
+      return { 
+        userId: volunteer.userId,
+        gender: volunteer.gender,
+        location: volunteer.location,
+        ageRange: volunteer.ageRange,
+        interests: volunteer.intrests,
+        issues: volunteer.issues,
+        score 
+      };
+    });
+  
+    const sortedUsers = userScore.sort((a, b) => b.score - a.score);
+  
+    return sortedUsers.slice(0, 15);
+  };
+  
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       console.log(currentUser);
@@ -75,13 +113,16 @@ export function UserAuthContextFunction9({ children }) {
     };
   }, []);
 
+
   const values = {
     signUp,
     logIn,
     user,
     logOut,
     googleLogIn,
-    addDetails
+    addDetails,
+    matchUsers,
+
 
   };
 

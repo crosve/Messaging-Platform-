@@ -17,8 +17,6 @@ function App() {
   return (
     <>
     
-  
-    {/* <UserAuthContextFunction9> */}
     <div className='design'>
       <div className="container">
         <Routes>
@@ -38,7 +36,6 @@ function App() {
     
     </div>
 
-    {/* </UserAuthContextFunction9> */}
 
     </>
   

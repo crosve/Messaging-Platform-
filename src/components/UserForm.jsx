@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState, useEffect, useContext} from 'react'
 import { issuesArea, intrests, ageRanges } from '../static/data'
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
@@ -6,6 +6,10 @@ import MenuItem from '@mui/material/MenuItem';
 import { FormControl } from '@mui/material';
 import Multiselect from './Multiselect';
 import MultiSelectDropdown from './IssuesMultiselect';
+import { db } from '../firebase';
+import { collection, getDocs } from 'firebase/firestore';
+import { UserAuthContext } from '../context/UserAuthContext';
+import MatchedUsers from './MatchedUsers';
 
 
 function UserForm() {
@@ -14,15 +18,56 @@ function UserForm() {
     const [country, setCountry] = useState('');
     const [selectedIntrests, setSelectedIntrests] = useState([]); 
     const [issues, setIssues] = useState([]);
+    let sortedUsers = [];
+    const [users, setUsers] = useState([]);
+    // const [currentUser, setCurrentUser] = useState();
+    const [finalSortedVolunteers, setFinalSortedVolunteers] = useState([]);
+
+    const {matchUsers} = useContext(UserAuthContext);
+
+    useEffect(() =>{
+        const fetchUsers = async () => {
+            try{
+                const userCollections = collection(db, 'users');
+                const querySnapshot = await getDocs(userCollections);
+
+                const allUsers = [];
+                querySnapshot.forEach((doc) => {
+                    const userData = doc.data();
+                    const selectedUserData = {
+                        ageRange: userData.ageRange,
+                        country: userData.country,
+                        gender: userData.gender,
+                        intrests: userData.intrests,
+                        issues: userData.issues,
+                        userId: userData.uid
+
+                    }
+                    allUsers.push(selectedUserData);
+                });
+                setUsers(allUsers);
+
+            }catch(error){
+                console.log(error)
+            }
+    }
+    fetchUsers();
+    }, [])
 
     const handleSubmit = (e) =>
     {
         e.preventDefault();
-        return(
-            console.log('yeah')
-
-
-        )
+        const currentUser = {
+            ageRange: age,
+            country: country,
+            gender: gender,
+            intrests: selectedIntrests,
+            issues: issues
+        }
+        sortedUsers = matchUsers(currentUser, users);
+        setFinalSortedVolunteers(sortedUsers);
+ 
+ 
 
     }
 
@@ -34,6 +79,7 @@ function UserForm() {
 
 
     return (
+        <>
         <div className='design'>
             <div className="container">
                 <form onSubmit={handleSubmit}>
@@ -76,7 +122,7 @@ function UserForm() {
                         required
                         select
                     >
-                        <MenuItem value="USA">USA</MenuItem>
+                        <MenuItem value="United States">United States</MenuItem>
                     </TextField>
 
                     <Multiselect  intrests={intrests} selectedIntrest={selectedIntrests} setSelectedIntrest={setSelectedIntrests} />
@@ -93,6 +139,9 @@ function UserForm() {
                 </form>
             </div>
         </div>
+            {finalSortedVolunteers && <MatchedUsers matchedUsers={finalSortedVolunteers} />}
+        </>
+            
     )
 }
 

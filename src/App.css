@@ -1,14 +1,14 @@
-/* .design{
-  display: flex;
+.design{
+  /* display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  width: 100%;
+  width: 100%; */
   background-color: rgb(194, 193, 193);
 
 }
-a{
+/* a{
   text-decoration: none;;
 }
 

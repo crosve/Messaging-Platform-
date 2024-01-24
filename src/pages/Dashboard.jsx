@@ -39,7 +39,7 @@ function Dashboard() {
     <>
       <h1>Welcome {user && user.email}</h1>
       <div>Dashboard</div>
-      <h1>Your Information</h1>
+      {/* <h1>Your Information</h1> */}
    
 
       <Button variant="outlined" onClick={handleLogOut}>
