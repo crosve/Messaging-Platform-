@@ -71,17 +71,17 @@ function UserForm() {
 
     }
 
-      
-    
+    const shuffle = () => {
+        console.log("shuffled");
+        
 
-
+    }
 
 
 
     return (
         <>
-        <div className='design'>
-            <div className="container">
+      
                 <form onSubmit={handleSubmit}>
                     <FormControl>
                     <TextField
@@ -125,21 +125,29 @@ function UserForm() {
                         <MenuItem value="United States">United States</MenuItem>
                     </TextField>
 
-                    <Multiselect  intrests={intrests} selectedIntrest={selectedIntrests} setSelectedIntrest={setSelectedIntrests} />
+                    <Multiselect
+                      intrests={intrests} selectedIntrest={selectedIntrests} setSelectedIntrest={setSelectedIntrests} />
 
-                    <MultiSelectDropdown issuesArea={issuesArea} selectedIssues={issues} setSelectedIssues={setIssues} />
+                    <MultiSelectDropdown
+                        
+                     issuesArea={issuesArea} selectedIssues={issues} setSelectedIssues={setIssues} />
 
-                    <Button variant="outlined" type='submit' sx={{ color: '#000000' }} >Submit</Button>
+                    <Button
+                        
+                     variant="outlined" type='submit' sx={{ color: '#000000'}} >Submit</Button>
 
-
-
-            
                     </FormControl>
 
                 </form>
-            </div>
-        </div>
+            {finalSortedVolunteers.length === 0 && <h1>No Matches Found</h1>}
             {finalSortedVolunteers && <MatchedUsers matchedUsers={finalSortedVolunteers} />}
+            {finalSortedVolunteers && 
+            <Button
+                onClick={shuffle}
+                variant='outlined'
+                sx={{ color: '#000000'}}
+            >Reroll</Button>}
+            
         </>
             
     )

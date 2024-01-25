@@ -3,20 +3,23 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 
-function VolunteerCard({gender, country, ageRange, interests, issues }) {
+function VolunteerCard({gender, location, ageRange, interests, issues }) {
   return (
-    <Card sx={{maxWidth: 275, background: 'palette.background.default'}}>
+    <Card sx={{maxWidth: 275, maxHeight: '100%', background: 'palette.background.default'}}>
         <CardContent>
+
             <Typography sx={{ fontSize: 14}} color="text.secondary" gutterBottom>
                 Gender: {gender}
             </Typography>
             <Typography variant="h5" component="div">
-                Location: {country}
+                From {location}
             </Typography>
 
             <Typography sx={{ mb: 1.5 }} color="text.secondary">
                 Age-Range: {ageRange}
             </Typography>
+
+
 
             <Typography variant="body2">
                 Interests: 

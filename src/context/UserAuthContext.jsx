@@ -88,7 +88,7 @@ export function UserAuthContextFunction9({ children }) {
       return { 
         userId: volunteer.userId,
         gender: volunteer.gender,
-        location: volunteer.location,
+        location: volunteer.country,
         ageRange: volunteer.ageRange,
         interests: volunteer.intrests,
         issues: volunteer.issues,

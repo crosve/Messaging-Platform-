@@ -6,6 +6,7 @@ import { MenuItem } from '@mui/material';
 function MultiSelectDropdown({ issuesArea, selectedIssues, setSelectedIssues }) {
   return (
     <Autocomplete
+      sx={{ marginBottom: '20px', width: '400px' }}
       multiple
       id="issues-select"
       options={issuesArea}

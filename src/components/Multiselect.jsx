@@ -8,12 +8,13 @@ function Multiselect({intrests, selectedIntrest, setSelectedIntrest}) {
 
   return (
     <Autocomplete
+        sx={{marginBottom: '20px', width: '400px'}}
         multiple
         id="intrests-select"
         options={intrests}
         value={selectedIntrest}
-        onChange={(event, newValue) => {
-          if (newValue.length <= 5) {
+        onChange={(event, newValue) => 
+          {if (newValue.length <= 5) {
             setSelectedIntrest(newValue);
           }
         }}

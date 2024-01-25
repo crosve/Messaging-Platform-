@@ -47,7 +47,7 @@ function Login() {
 
   return (
     
-    <form onSubmit={handleSubmit}>
+    <form  onSubmit={handleSubmit}>
       {error && <Alert severity="error">{error}</Alert>}
   
         <h1>Login</h1>
