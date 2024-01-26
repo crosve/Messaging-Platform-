@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 
 function VolunteerCard({gender, location, ageRange, interests, issues }) {
   return (
-    <Card sx={{maxWidth: 275, maxHeight: '100%', background: 'palette.background.default'}}>
+    <Card sx={{ maxHeight: '100%' , background: 'palette.background.default'}}>
         <CardContent>
 
             <Typography sx={{ fontSize: 14}} color="text.secondary" gutterBottom>
