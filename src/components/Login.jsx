@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import Alert from '@mui/material/Alert';
 import GoogleButton from 'react-google-button';
 import { FormControl } from '@mui/material';
+import "./Login.css";
 
 function Login() {
   const [email, setEmail] = useState(''); 
