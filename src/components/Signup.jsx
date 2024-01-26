@@ -117,11 +117,12 @@ function Signup() {
     <form onSubmit={handleSubmit} className='signup-form'>
       {error && <Alert severity="error">{error}</Alert>}
      
-      <h1>SignUp</h1>
+      <h1>Sign Up</h1>
       <FormControl>
 
         {/* <InputLabel id="Email">Age</InputLabel> */}
         <TextField
+          
           sx={{marginBottom: '20px'}}
           id="Email"
           label="Email"
@@ -133,6 +134,7 @@ function Signup() {
 
         {/* <InputLabel id="Password">Password</InputLabel> */}
         <TextField
+        
            sx={{marginBottom: '20px'}}
           id="Password"
           label="Password"

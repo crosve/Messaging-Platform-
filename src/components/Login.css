@@ -1,4 +1,4 @@
-/*.signup-form{
+.login-form{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -7,12 +7,12 @@
 
 }
 
-.signup-form > *{
+.login-form > *{
     margin-bottom: 20px;
     background-color:hsl(241, 91%, 45%);
-} */
+}
 
-.signup-form {
+/*.signup-form {
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
@@ -75,5 +75,5 @@
     text-align: center;
     margin-top: 20px;
     color: #007bff;
-  }
+  }*/
   
