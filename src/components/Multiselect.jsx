@@ -8,7 +8,7 @@ function Multiselect({intrests, selectedIntrest, setSelectedIntrest}) {
 
   return (
     <Autocomplete
-        sx={{marginBottom: '20px', width: '400px'}}
+        sx={{marginBottom: '20px', width: 'auto'}}
         multiple
         id="intrests-select"
         options={intrests}
