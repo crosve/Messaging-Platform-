@@ -74,11 +74,13 @@ function UserForm() {
 
     const reroll = () => {
         // Check if there are at least three users
+        //commented out for testing
         if (finalSortedVolunteers.length >= 3) {
           const firstThreeUsers = finalSortedVolunteers.slice(0, 3);
           const remainingUsers = finalSortedVolunteers.slice(3);
           const rerolledUsers = [...remainingUsers, ...firstThreeUsers];
           setFinalSortedVolunteers(rerolledUsers);
+
         }
       };
 
