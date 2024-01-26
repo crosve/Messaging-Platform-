@@ -6,7 +6,7 @@ function MatchedUsers({ matchedUsers }) {
   return (
     <div className='card-container'>
         {matchedUsers&&
-            matchedUsers.map((user, i) => (
+            matchedUsers.slice(0,3).map((user, i) => (
                 <VolunteerCard key={i} {...user} />
             ))
         }
