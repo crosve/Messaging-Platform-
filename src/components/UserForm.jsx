@@ -10,6 +10,7 @@ import { db } from '../firebase';
 import { collection, getDocs } from 'firebase/firestore';
 import { UserAuthContext } from '../context/UserAuthContext';
 import MatchedUsers from './MatchedUsers';
+import "./userform.css"; 
 
 
 function UserForm() {
@@ -71,21 +72,25 @@ function UserForm() {
 
     }
 
-    const shuffle = () => {
-        console.log("shuffled");
-        
-
-    }
+    const reroll = () => {
+        // Check if there are at least three users
+        if (finalSortedVolunteers.length >= 3) {
+          const firstThreeUsers = finalSortedVolunteers.slice(0, 3);
+          const remainingUsers = finalSortedVolunteers.slice(3);
+          const rerolledUsers = [...remainingUsers, ...firstThreeUsers];
+          setFinalSortedVolunteers(rerolledUsers);
+        }
+      };
 
 
 
     return (
         <>
       
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} className='user-form'>
                     <FormControl>
                     <TextField
-                        sx={{marginBottom: '20px'}}
+                        sx={{marginBottom: '20px', width: '400px'}}
                         label="Age"
                         value={age}
                         onChange={(e) => setAge(e.target.value)}
@@ -134,16 +139,24 @@ function UserForm() {
 
                     <Button
                         
-                     variant="outlined" type='submit' sx={{ color: '#000000'}} >Submit</Button>
+                     variant="outlined" type='submit' sx={{ color: '#000000', marginBottom: '50px'}} >Submit</Button>
 
                     </FormControl>
+{/* 
+                    {finalSortedVolunteers && <MatchedUsers matchedUsers={finalSortedVolunteers} />}
+                    {finalSortedVolunteers.length !== 0 && 
+                    <Button
+                        onClick={reroll}
+                        variant='outlined'
+                        sx={{ color: '#000000'}}
+                    >Reroll</Button>} */}
 
                 </form>
-            {finalSortedVolunteers.length === 0 && <h1>No Matches Found</h1>}
+            {/* {finalSortedVolunteers.length === 0 && <h1>No Matches Found</h1>} */}
             {finalSortedVolunteers && <MatchedUsers matchedUsers={finalSortedVolunteers} />}
-            {finalSortedVolunteers && 
+            {finalSortedVolunteers.length !== 0 && 
             <Button
-                onClick={shuffle}
+                onClick={reroll}
                 variant='outlined'
                 sx={{ color: '#000000'}}
             >Reroll</Button>}

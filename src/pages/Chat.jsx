@@ -13,14 +13,25 @@ function Chat() {
   return (
     
     <div className='chat-room'>
+
+      
+
+      
+       
         <div className='chat-room-header'>
           <h1>Welcome to the Chat Room</h1>
-          <p>To give you the best experience, please fill out some detail about yourself so we can match you with volunteers</p>
+          <p>Please enter some information about yourself so we can pair you with the best candidates</p>
         </div>
-        
+
         <UserForm/>
+
+        
+
+       
+        
+       
         {/* <MatchedUsers/> */}
-        <div className='links'>
+        {/* <div className='links'>
           <h1>
             <Link to={'/'}>HomePage</Link>
           </h1>
@@ -30,9 +41,9 @@ function Chat() {
           <h1>
             <Link to={'/login'}>Log In</Link>
         </h1>
+        </div> */}
         </div>
         
-      </div>
     
     
     
