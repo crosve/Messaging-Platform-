@@ -11,6 +11,7 @@ import { db } from '../firebase';
 import {doc,  setDoc } from 'firebase/firestore';
 import Multiselect from './Multiselect';
 import MultiSelectDropdown from './IssuesMultiselect';
+import "./signup.css";
 
 
 
@@ -113,7 +114,7 @@ function Signup() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='signup-form'>
       {error && <Alert severity="error">{error}</Alert>}
      
       <h1>SignUp</h1>
