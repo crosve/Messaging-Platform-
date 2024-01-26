@@ -22,9 +22,9 @@ function Chat() {
           <h1>Welcome to the Chat Room</h1>
           <p>Please enter some information about yourself so we can pair you with the best candidates</p>
         </div>
-
-        <UserForm/>
-
+        <div className='user-form-wrapper'>
+                <UserForm />
+            </div>
         
 
        
