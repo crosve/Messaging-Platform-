@@ -4,3 +4,10 @@
   box-sizing: border-box;
   /* background-color: #aad8e6 ; */
 }
+
+body{
+  background: #aad8e6;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
