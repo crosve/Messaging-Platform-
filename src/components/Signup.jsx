@@ -211,9 +211,11 @@ function Signup() {
           Submit
         </Button>
         <h1>
-          Already have an account? <Link to={'/login'}> Log In</Link>
+          Already have an account? 
         </h1>
+        <h1><Link to={'/login'}> Log In</Link></h1>
         <h1>
+
           <Link to={'/'}>Homepage</Link>
         </h1>
       </FormControl>

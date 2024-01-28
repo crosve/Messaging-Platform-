@@ -23,7 +23,7 @@
   
   .login-form h1 {
     margin-bottom: 20px;
-    color: #333333;
+    color: #007bff;
     font-size: 24px;
     text-align: center;
   }
@@ -77,3 +77,8 @@
     color: #007bff;
   }
   
+  a {
+    text-decoration: none;
+    color: rgb(109, 109, 228);
+
+  }

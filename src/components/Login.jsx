@@ -56,12 +56,13 @@ function Login() {
         <TextField sx={{marginBottom: '20px'}} id="outlined-basic" label="Email" variant='outlined' onChange={(e) => setEmail(e.target.value)}/>
         <TextField sx={{marginBottom: '20px'}} id="outlined-basic" label="password" variant='outlined' onChange = {(e) => setPassword(e.target.value)}/><br/>
 
-        <Button variant="outlined" type='submit' sx={{ color: '#000000' }} >Log In</Button>
+        <Button variant="outlined" type='submit' sx={{ color: '#000000', marginBottom: '30px' }} >Log In</Button>
         {/* <div className='google-btn'>
           <GoogleButton onClick={handleGoogleLogIn}/>
         </div> */}
-        <h1>Don't have an account? <Link to={'/signup'}>Sign up</Link></h1>
-        <h1> <Link to ={'/'}>homepage</Link></h1>
+        <h1>Don't have an account? </h1>
+        <h1> <Link to ={'/signup'}>Sign Up</Link></h1>
+        <h1> <Link to ={'/'}>Homepage</Link></h1>
         </FormControl>
     </form>
   )
