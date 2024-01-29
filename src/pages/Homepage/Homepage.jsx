@@ -26,7 +26,7 @@ function Homepage() {
 
         <header className='Beacon'>Welcome to Beacon of Hope</header>
         <div className='img'>
-        <img src="./Beacon.jpg" alt="Beacon" className='beacon-img'/>  
+            <img src="./Beacon.jpg" alt="Beacon" className='beacon-img'/>  
         </div>
            
      
