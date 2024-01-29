@@ -10,6 +10,7 @@ function Homepage() {
     {/* {user && <Navigate to='/dashboard'/>}: */}
 
         <div>Homepage</div>
+        <img src="/images/your-image.jpg" alt="Description" />
         <div>
             <h1>
                 <Link to={'/signup'}>Sign Up</Link>
