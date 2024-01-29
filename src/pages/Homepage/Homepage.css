@@ -1,11 +1,8 @@
-boby{
-    font-family: Arial, Helvetica, sans-serif;
-}
+
 
 .comings {
     font-size: 2em;
     text-align: center;
-    font-size: 120px;
     padding: 100px;
     margin: 1rem;
     color: aliceblue;
@@ -14,7 +11,7 @@ boby{
 .Beacon{
     font-size: 2em;
     text-align: center;
-    font-size: 120px;
+    font-size: 80px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: rgb(5, 5, 146);
     margin: 40px;
@@ -25,18 +22,18 @@ boby{
     padding: 30px;
     text-align: center;
     margin: 30px;
-    font-size: 70px;
+    font-size: 50px;
     
 }
 
 .p{
-    font-size: 60px;
+    font-size: 30px;
     text-align: center;
 }
 
 .signup{
     text-align: center;
-    font-size: 80px;
+    font-size: 40px;
     padding: 60px;
     margin: 60px;
     color: blue;
@@ -53,6 +50,7 @@ boby{
 
 
 .footer {
+    position: absolute;
     background-color: #ffffff;
     font-size: 30px;
     padding: 1rem;
@@ -64,6 +62,14 @@ boby{
 
 .img{
     display: flex;
+    width: 100%;
     align-items: center;
     justify-content: center;
+}
+.img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
