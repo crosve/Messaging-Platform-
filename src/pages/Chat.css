@@ -15,6 +15,7 @@
     text-align: center;
     margin-bottom: 20px;
     width: 400px;
+    font-size: 30px;
 }
 
 .chat-room .links{
@@ -22,6 +23,7 @@
     justify-content: space-between;
     width: 400px;
     text-align: center;
+    font-size: 30px;
 }
 
 
